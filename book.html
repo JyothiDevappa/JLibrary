@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books Collection</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <style>
+    /* Reset & body */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url(/assets/hero_banner/books.jpg);
+      background-size: 100% 400%;
+      animation: gradientBG 15s ease infinite;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: #fff;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    /* Animate background gradient */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Section */
+    .popular-books {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .popular-books h2 {
+      text-decoration: none;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: #f6d365;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Grid */
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    /* Glass-like Card */
+    .book-card {
+      /* background: rgba(255, 255, 255, 0.1); */
+      border-radius: 20px;
+      padding: 20px;
+      /* backdrop-filter: blur(10px); */
+      /* -webkit-backdrop-filter: blur(10px); */
+      /* border: 1px solid rgba(255, 255, 255, 0.2); */
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Book Image */
+    .book-card img {
+      width: 150px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .book-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Book Title */
+    .book-card h3 {
+      font-size: 1rem;
+      max-width: 200px;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Button */
+    .book-card button,
+    .book-card .button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ffffff, #df7e0f);
+      color: #111;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .book-card button:hover,
+    .book-card .button:hover {
+      background: linear-gradient(135deg, #fda085, #f6d365);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsive tweak */
+    /* Mobile: 2 cards per row */
+    @media screen and (max-width: 500px) {
+      .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .book-card img {
+        width: 100px;
+        /* smaller images for mobile */
+        height: 150px;
+      }
+
+      .book-card h3 {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+  <section class="popular-books">
+    <h2>Popular Books</h2>
+    <div class="book-grid">
+
+      <!-- Book 1 -->
+      <div class="book-card">
+        <img src="assets/book_cover/alice.webp" alt="Alice in Wonderland">
+        <h3>Alice's Adventures in Wonderland</h3>
+        <a href="books/Alice's Adventures in Wonderland/Alice's Adventures in Wonderland.html" target="_blank"
+          rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="book-card">
+        <img src="assets/book_cover/The_Adventures_of_Sherlock_Holmes.jpg" alt="Sherlock Holmes">
+        <h3>The Adventures of Sherlock Holmes</h3>
+        <a href="books/The Adventures of Sherlock Holmes/pg1661-images.html" target="_blank" rel="noopener"
+          class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="book-card">
+        <img src="assets/book_cover/pride-and-prejudice-9781471134746_hr.jpg" alt="Pride and Prejudice">
+        <h3>Pride and Prejudice</h3>
+        <a href="books/Pride and Prejudice/Pride and Prejudice.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="book-card">
+        <img src="assets/book_cover/moby_dick.jpg" alt="Frankenstein">
+        <h3>The Whale by Herman Melville</h3>
+        <a href="books/The Whale by Herman Melville/pg2701-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 5 -->
+      <div class="book-card">
+        <img src="assets/book_cover/little_women.png" alt="little women">
+        <h3>Little Women</h3>
+        <a href="books/Little Women/pg37106-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 6 -->
+      <div class="book-card">
+        <img src="assets/book_cover/heidi-306.jpg" alt="Dorian Gray">
+        <h3>Heidi</h3>
+        <a href="books/Heidi/pg20781-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 7 -->
+      <div class="book-card">
+        <img src="assets/book_cover/draculaa.webp" alt="The Great Gatsby">
+        <h3>Dracula</h3>
+        <a href="books/Dracula/pg345-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 8 -->
+      <div class="book-card">
+        <img src="assets/book_cover/Carmilla by Joseph Sheridan Le Fanuu.jpg" alt="Carmilla">
+        <h3>Carmilla</h3>
+        <a href="books/Carmilla by Joseph Sheridan Le Fanu/pg10007-images.html" target="_blank" rel="noopener"
+          class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 9 -->
+      <div class="book-card">
+        <img src="assets/book_cover/A_Room_with_a_View.jpg" alt="A Room with a View">
+        <h3>A Room with a View</h3>
+        <a href="books/A Room with a View/pg2641-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      <!-- Book 10 -->
+      <div class="book-card">
+        <img src="assets/book_cover/124983282.jpg" alt="Romeo and Juliet by William Shakespeare">
+        <h3>Romeo and Juliet by William Shakespeare</h3>
+        <a href="books/Romeo and Juliet by William Shakespeare/pg1513-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+      
+      <!-- Book 11 -->
+      <div class="book-card">
+        <img src="assets/book_cover/Jane_eyre_ver1.jpg" alt="Jane Eyre An Autobiography by Charlotte Brontë">
+        <h3>Jane Eyre An Autobiography by Charlotte Brontë</h3>
+        <a href="books/Jane Eyre An Autobiography by Charlotte Brontë/pg1260-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+
+         <!-- Book 12 -->
+      <div class="book-card">
+        <img src="assets/book_cover/Frankenstein-Book-Cover.jpg" alt="Frankenstein">
+        <h3>Frankenstein</h3>
+        <a href="books/Frankenstein/pg84-images.html" target="_blank" rel="noopener" class="button">
+          Read book
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+</html>
