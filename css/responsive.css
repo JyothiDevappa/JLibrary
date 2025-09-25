@@ -81,7 +81,7 @@
   .explore-btn {
     padding: 10px 22px;
     font-size: 0.9rem;
-    margin-bottom: 30px;
+    margin-bottom: 150px;
   }
 }
 
@@ -93,6 +93,7 @@
 
   .book-section {
     width: 100%;
+    height: 80vh;
     border-radius: 0 !important;
     position: relative;
   }
